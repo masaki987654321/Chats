@@ -1,0 +1,5 @@
+<% remarks.each do |remark| %>
+    <p><%= remark.ip %></p>
+    <p><%= remark.text %></p>
+    <p><%= link_to 'Destroy', remark, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<% end %>

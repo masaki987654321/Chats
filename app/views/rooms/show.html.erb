@@ -10,5 +10,10 @@
   <%= @room.ip %>
 </p>
 
-<%= link_to 'Edit', edit_room_path(@room) %> |
+<h1>Remarks</h1>
+
+<%= render 'remark', remarks: @remarks %>
+
+<%= render 'remark_form', remark: @remark %>
+
 <%= link_to 'Back', rooms_path %>

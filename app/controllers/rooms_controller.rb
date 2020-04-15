@@ -10,6 +10,9 @@ class RoomsController < ApplicationController
   # GET /rooms/1
   # GET /rooms/1.json
   def show
+    @remark = Remark.new
+    @remark.room_id = @room.id
+    @remarks = @room.remarks 
   end
 
   # GET /rooms/new
@@ -26,7 +29,6 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     @room.ip = request.remote_ip
-    logger.debug "task: #{@room.attributes.inspect}"
 
     respond_to do |format|
       if @room.save
@@ -71,6 +73,6 @@ class RoomsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def room_params
-      params.require(:room).permit(:name, :ip)
+      params.require(:room).permit(:name)
     end
 end
