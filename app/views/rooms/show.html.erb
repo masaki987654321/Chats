@@ -1,19 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>RoomName:</strong>
   <%= @room.name %>
 </p>
 
-<p>
-  <strong>Ip:</strong>
-  <%= @room.ip %>
-</p>
-
-<h1>Remarks</h1>
-
-<%= render 'remark', remarks: @remarks %>
-
+<div class="container">
+  <%= render 'remark', remarks: @remarks %>
+</div>
+<hr>
 <%= render 'remark_form', remark: @remark %>
 
 <%= link_to 'Back', rooms_path %>

@@ -1,5 +1,11 @@
 <% remarks.each do |remark| %>
-    <p><%= remark.ip %></p>
-    <p><%= remark.text %></p>
-    <p><%= link_to 'Destroy', remark, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <div class="text-primary">
+        <p><%= remark.ip %> / <%= link_to 'Destroy', remark, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    </div>
+    <!--吹き出しはじまり-->
+    <div class="balloon1">
+            <p><%= remark.text %></p>
+    </div>
+    <!--吹き出し終わり-->
 <% end %>
+
