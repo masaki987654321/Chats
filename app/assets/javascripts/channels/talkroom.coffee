@@ -4,20 +4,18 @@ $(document).on 'keypress', '[data-behavior~=talkroom_speaker]', (event) ->
     App.talkroom.speak event.target.value
     event.target.value = ""
     event.preventDefault()
-    
+
 App.talkroom = App.cable.subscriptions.create "TalkroomChannel",
   connected: ->
-    console.log("connnennenenrajfdlkajf")
     # Called when the subscription is ready for use on the server
 
   disconnected: ->
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    console.log("received")
     alert data['message']
+    $('#message').append data['message']
     # Called when there's incoming data on the websocket for this channel
 
   speak: (message)->
-    console.log("speakaaaa")
     @perform 'speak', message: message
