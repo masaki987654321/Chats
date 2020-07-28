@@ -1,0 +1,10 @@
+<h1>talk room</h1>
+
+<div id='messages'>
+    <%= render :partial => 'message', :collection => @messages %>
+</div>
+
+<form>
+    <label>メッセージを入力</label>
+    <input type='text' data-behavior='talkroom_speaker'>
+</form>
