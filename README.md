@@ -1,2 +1,1 @@
-# README
-rails勉強用リポジトリ
+# rails勉強用リポジトリ
